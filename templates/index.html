@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Busca na Wikipedia</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://freeiconshop.com/wp-content/uploads/edd/search-flat.png"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Busca na Wikipedia</h1>
+      <form method="POST">
+        <input type="text" name="query" placeholder="Digite sua pesquisa" />
+        <select name="search_type">
+          <option value="title">Por Título</option>
+          <option value="category">Por Categoria</option>
+        </select>
+        <button type="submit">Buscar</button>
+      </form>
+      {% if result %}
+      <div class="results">
+        <h2>Resultados:</h2>
+        <p>{{ result }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
