@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Informe ao Docker que a aplicação escuta na porta 5000
-EXPOSE 5000
+EXPOSE 80
 
 # Defina o comando para iniciar a aplicação
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port", "80"]
