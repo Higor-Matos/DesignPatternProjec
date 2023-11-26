@@ -12,12 +12,15 @@
       type="image/png"
       href="https://freeiconshop.com/wp-content/uploads/edd/search-flat.png"
     />
-    <!-- Importe o arquivo de configuração das partículas -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Carregamento local do particles.js -->
+    <script src="{{ url_for('static', filename='particles.min.js') }}"></script>
+
+    <!-- Carregamento do arquivo de configuração das partículas -->
     <script src="{{ url_for('static', filename='particles-config.js') }}"></script>
   </head>
   <body>
-    <!-- particles.js container -->
+    <!-- Container para as partículas -->
     <div id="particles-js"></div>
 
     <div class="container">
