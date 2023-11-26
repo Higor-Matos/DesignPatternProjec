@@ -1,0 +1,40 @@
+@startuml
+' Definição das Classes
+class WikipediaAPI {
+    - _instance: WikipediaAPI
+    + __new__(): WikipediaAPI
+    + wiki
+}
+
+abstract class ArticleFetcher {
+    {abstract} + fetch(query): string
+}
+
+class ArticleByTitleFetcher {
+    + fetch(title): string
+}
+
+class ArticleByCategoryFetcher {
+    + fetch(category): string
+}
+
+class FetcherFactory {
+    + get_fetcher(fetcher_type): ArticleFetcher
+}
+
+class FlaskApp {
+    + index(): string
+}
+
+' Relacionamentos
+ArticleFetcher <|-- ArticleByTitleFetcher
+ArticleFetcher <|-- ArticleByCategoryFetcher
+FetcherFactory ..> ArticleFetcher : cria >
+
+FlaskApp ..> FetcherFactory : usa >
+FlaskApp ..> WikipediaAPI : usa >
+
+' Indicação dos Padrões de Projeto
+note right of WikipediaAPI : Singleton
+note right of ArticleFetcher : Factory Method
+@enduml
