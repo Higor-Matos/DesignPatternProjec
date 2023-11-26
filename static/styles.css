@@ -28,6 +28,7 @@ body {
   border-radius: 8px;
   margin: 10px;
   animation: fadeIn 0.5s ease-in-out;
+  position: relative;
 }
 
 @keyframes fadeIn {
@@ -82,16 +83,18 @@ button:hover {
 @media (max-width: 600px) {
   .container {
     width: 95%;
+    padding: 15px;
   }
 
   input,
   select,
   button {
     font-size: 16px;
-    padding: 15px;
+    padding: 12px;
+    width: 100%;
   }
 
-  .results {
-    max-height: 300px;
+  form {
+    flex-direction: column;
   }
 }
