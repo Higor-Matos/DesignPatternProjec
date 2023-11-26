@@ -2,10 +2,7 @@
 from abc import ABC, abstractmethod
 from wikipedia_api import WikipediaAPI
 
-import wikipediaapi
-
-# Padrão Factory Method: Define uma interface comum para criar objetos, mas
-# permite que as subclasses decidam qual classe instanciar.
+# Padrão Factory Method: Define uma interface comum para criar objetos, mas permite que as subclasses decidam qual classe instanciar.
 
 
 class ArticleFetcher(ABC):

@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-# Importe as classes do programa anterior aqui
 from article_fetchers import FetcherFactory
 
 app = Flask(__name__)
@@ -14,7 +13,7 @@ def index():
         query = request.form.get('query')
         search_type = request.form.get('search_type')
         factory = FetcherFactory()
-        fetcher = factory.get_fetcher(search_type)
+        fetcher = factory.get_fetcher(search_type)  # Uso do Factory Method
         result = fetcher.fetch(query)
 
     return render_template('index.html', result=result, search_type=search_type)
